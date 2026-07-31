@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "rag-chatbot"
+version = "0.1.0"
+description = "RAG Chatbot using OpenAI Agent SDK with Cohere embeddings and Qdrant vector search"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "AI Assistant", email = "ai@example.com"}
+]
+dependencies = [
+    "openai>=1.50.0",
+    "openai-agents>=0.0.1",
+    "qdrant-client>=1.10.0",
+    "cohere>=5.20.0",
+    "requests>=2.32.5",
+    "trafilatura>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.4.0",
+    "fastapi[standard]>=0.141.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.5.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

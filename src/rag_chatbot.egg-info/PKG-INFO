@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: rag-chatbot
+Version: 0.1.0
+Summary: RAG Chatbot using OpenAI Agent SDK with Cohere embeddings and Qdrant vector search
+Author-email: AI Assistant <ai@example.com>
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.50.0
+Requires-Dist: openai-agents>=0.0.1
+Requires-Dist: qdrant-client>=1.10.0
+Requires-Dist: cohere>=5.20.0
+Requires-Dist: requests>=2.32.5
+Requires-Dist: trafilatura>=2.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pydantic>=2.4.0
+Requires-Dist: fastapi[standard]>=0.141.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.5.0; extra == "dev"
+
+# RAG Chatbot
+
+A Retrieval-Augmented Generation (RAG) chatbot built with OpenAI Agent SDK that answers questions based on indexed textbook content.
+
+## Features
+
+- Query textbook content with AI-powered responses
+- Sitemap ingestion workflow for content indexing
+- Vector search using Qdrant and Cohere embeddings
+- CLI interface for interactive conversations
+
+## Requirements
+
+- Python 3.13+
+- OpenAI API key (or Google API key for Gemini)
+- Cohere API key
+- Qdrant vector database
+
+## Setup
+
+1. Install dependencies:
+```bash
+pip install -e .
+```
+
+2. Set up environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+3. Run the application:
+```bash
+python main.py
+```
