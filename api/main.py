@@ -2,6 +2,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.schema import ChatRequest, ChatResponse
+import agents
+
+print("Agents module:", agents.__file__)
+print("Agents version:", getattr(agents, "__version__", "unknown"))
+print("Has Agent:", hasattr(agents, "Agent"))
 from src.chatbot_agents.textbook_agent import ask
 
 
