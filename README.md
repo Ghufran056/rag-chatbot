@@ -10,6 +10,9 @@ The chatbot retrieves relevant textbook content from Qdrant using Cohere embeddi
 
 https://ghufran056.github.io/AI-spec-driven-book
 
+# 🤖 Backend API: 
+https://rag-chatbot-l6uo.onrender.com
+
 ---
 
 ## 🚀 Features
