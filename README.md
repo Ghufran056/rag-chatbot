@@ -1,35 +1,83 @@
-# RAG Chatbot
+# 🤖 RAG Chatbot Backend
 
-A Retrieval-Augmented Generation (RAG) chatbot built with OpenAI Agent SDK that answers questions based on indexed textbook content.
+A FastAPI-based Retrieval-Augmented Generation (RAG) backend built using the OpenAI Agents SDK.
 
-## Features
+The chatbot retrieves relevant textbook content from Qdrant using Cohere embeddings before generating responses.
 
-- Query textbook content with AI-powered responses
-- Sitemap ingestion workflow for content indexing
-- Vector search using Qdrant and Cohere embeddings
-- CLI interface for interactive conversations
+---
 
-## Requirements
+# Live Demo
 
-- Python 3.13+
-- OpenAI API key (or Google API key for Gemini)
-- Cohere API key
-- Qdrant vector database
+https://ghufran056.github.io/AI-spec-driven-book
 
-## Setup
+---
 
-1. Install dependencies:
-```bash
-pip install -e .
+## 🚀 Features
+
+- OpenAI Agents SDK
+- FastAPI REST API
+- Qdrant vector search
+- Cohere embeddings
+- Semantic retrieval
+- Context-aware answers
+- Modular architecture
+- Ready for frontend integration
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- FastAPI
+- OpenAI Agents SDK
+- Qdrant
+- Cohere
+- uv
+- Pydantic
+
+---
+
+## ⚙️ API Endpoint
+
+### POST
+
+/api/chat
+
+---
+
+## 🔍 Retrieval Pipeline
+
+```text
+User Question
+      │
+      ▼
+FastAPI API
+      │
+      ▼
+OpenAI Agent
+      │
+      ▼
+Generate Embedding (Cohere)
+      │
+      ▼
+Qdrant Vector Search
+      │
+      ▼
+Retrieve Relevant Chunks
+      │
+      ▼
+Generate Final Answer
+      │
+      ▼
+Return Response
 ```
 
-2. Set up environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your API keys
-```
+---
 
-3. Run the application:
-```bash
-python main.py
-```
+## 📌 Notes
+
+- The chatbot answers questions using indexed textbook content.
+- Semantic search is powered by Cohere embeddings and Qdrant vector search.
+- The backend is designed to be consumed by any frontend via a REST API.
+
+---
